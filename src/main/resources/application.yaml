@@ -1,0 +1,7 @@
+spring:
+  application:
+    name: jackson-study
+
+api:
+  dummy:
+    base-uri: https://dummyjson.com/
