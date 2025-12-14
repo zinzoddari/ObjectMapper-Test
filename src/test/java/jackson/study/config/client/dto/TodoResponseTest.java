@@ -1,10 +1,8 @@
-package jackson.study.config.client;
+package jackson.study.config.client.dto;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.exc.UnrecognizedPropertyException;
-import jackson.study.config.client.dto.PostsResponse;
-import jackson.study.config.client.dto.TodoResponse;
 import jackson.study.config.client.dummy.DummyObjectMapperProviderHelper;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -12,11 +10,11 @@ import org.junit.jupiter.api.Test;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 import static org.assertj.core.api.SoftAssertions.assertSoftly;
 
-class DummyObjectMapperTest {
+class TodoResponseTest {
 
     private final ObjectMapper objectMapper;
 
-    public DummyObjectMapperTest() {
+    private TodoResponseTest() {
         final DummyObjectMapperProviderHelper helper = new DummyObjectMapperProviderHelper();
 
         this.objectMapper = helper.getDummyObjetMapper();
@@ -38,7 +36,7 @@ class DummyObjectMapperTest {
     }
 
     @Test
-    @DisplayName("json 문자열을 객체로 성공적으로 매핑합니다.")
+    @DisplayName("json 문자열을 TodoResponse 객체로 성공적으로 매핑합니다.")
     void readValue() throws JsonProcessingException {
         //given
         final String json = """
@@ -55,7 +53,10 @@ class DummyObjectMapperTest {
 
         //then
         assertSoftly(it -> {
-//            it.assertThat()
+            it.assertThat(response.getUserId()).isEqualTo(1L);
+            it.assertThat(response.getId()).isEqualTo(1L);
+            it.assertThat(response.getTitle()).isEqualTo("delectus aut autem");
+            it.assertThat(response.isCompleted()).isEqualTo(false);
         });
     }
 }

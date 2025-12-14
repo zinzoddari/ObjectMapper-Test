@@ -35,7 +35,7 @@ public class PostsResponse {
         @JsonProperty("id")
         private Integer id;
 
-        @JsonProperty("title")
+        @JsonProperty("title2")
         private String title;
 
         @JsonProperty("body")

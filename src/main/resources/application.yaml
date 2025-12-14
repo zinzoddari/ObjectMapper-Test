@@ -4,4 +4,4 @@ spring:
 
 api:
   dummy:
-    base-uri: https://dummyjson.com/
+    base-uri: https://jsonplaceholder.typicode.com
