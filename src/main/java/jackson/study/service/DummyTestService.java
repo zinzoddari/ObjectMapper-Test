@@ -1,6 +1,6 @@
 package jackson.study.service;
 
-import jackson.study.config.client.dto.TodoResponse;
+import jackson.study.config.client.dummy.TodoResponse;
 import jackson.study.config.client.dummy.DummyClient;
 import lombok.RequiredArgsConstructor;
 import org.springframework.core.ParameterizedTypeReference;
