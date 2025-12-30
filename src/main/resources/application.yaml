@@ -5,6 +5,3 @@ spring:
 api:
   dummy:
     base-uri: https://jsonplaceholder.typicode.com
-logging:
-  level:
-    root: trace
