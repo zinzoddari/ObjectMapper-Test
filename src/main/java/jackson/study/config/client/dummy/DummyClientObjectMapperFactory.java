@@ -45,7 +45,7 @@ class DummyClientObjectMapperFactory {
      */
     public ObjectMapper createFailDummyClientObjectMapper() {
         return jsonConfig.createDefaultJsonMapperBuilder()
-                .build().copy()
-                .configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, true);
+                .configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, true)
+            .build();
     }
 }

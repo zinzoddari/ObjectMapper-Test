@@ -1,7 +1,7 @@
 package jackson.study.config.client.dummy;
 
-import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.exc.UnrecognizedPropertyException;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -22,7 +22,7 @@ class DummyClientObjectMapperFactoryTest {
                 """;
 
         //when & then
-        assertThrows(JsonMappingException.class,
+        assertThrows(UnrecognizedPropertyException.class,
                 () -> objectMapper.readValue(json, TodoResponse.class));
     }
 }
